@@ -1,49 +1,56 @@
-# Static HTML Website
+# About Us React App
 
 ## Overview
-This is a simple static HTML website project imported from GitHub. The project consists of a basic HTML page with minimal styling.
+A simple React application with a single About Us page, built with Vite for fast development.
 
 ## Project Structure
 ```
 .
-├── index.html          # Main HTML page
-├── assets/
-│   └── styles/
-│       └── style.css   # CSS stylesheet (currently empty)
-├── server.py           # Python HTTP server for development
-└── .replit             # Replit configuration
+├── index.html              # HTML entry point
+├── package.json            # Node.js dependencies and scripts
+├── vite.config.js          # Vite configuration
+├── src/
+│   ├── main.jsx            # React entry point
+│   ├── App.jsx             # Main App component
+│   ├── index.css           # Global styles
+│   └── pages/
+│       ├── AboutUs.jsx     # About Us page component
+│       └── AboutUs.css     # About Us page styles
+└── replit.md               # Project documentation
 ```
 
 ## Setup and Running
 
 ### Development
-The project uses a Python HTTP server to serve static files during development:
+The project uses Vite as the development server:
 - Server runs on port 5000
-- Bound to 0.0.0.0 to work with Replit's proxy
-- Includes cache control headers to prevent caching issues
+- Bound to 0.0.0.0 for Replit compatibility
+- Hot module replacement enabled
 
 To start the development server:
 ```bash
-python3 server.py
+npm run dev
 ```
 
-The workflow "Start application" is configured to automatically run this command.
-
-### Deployment
-The project is configured for static deployment:
-- Deployment type: static
-- Public directory: `.` (root directory)
-- All HTML, CSS, and assets are served directly
+### Build
+To create a production build:
+```bash
+npm run build
+```
 
 ## Recent Changes
-- **December 2, 2025**: Initial Replit setup
-  - Created Python HTTP server (server.py) for development
-  - Configured workflow for port 5000 with webview output
-  - Set up static deployment configuration
-  - Added cache control headers to prevent iframe caching issues
+- **December 2, 2025**: Created React application
+  - Set up Vite with React plugin
+  - Created About Us page with styled content
+  - Configured for Replit environment (port 5000, allowed hosts)
 
 ## Technical Details
-- **Language**: HTML/CSS
-- **Server**: Python 3 (development only)
+- **Framework**: React 18
+- **Build Tool**: Vite 5
 - **Port**: 5000 (development)
-- **Deployment**: Static hosting (no build step required)
+- **Styling**: Component-scoped CSS files
+
+### Deployment
+Configured for static deployment:
+- Build command: `npm run build`
+- Output directory: `dist`
